@@ -49,7 +49,7 @@ const submission = await stampshow.exhibits.get(application.exhibit_id!)
 // submission.status: "processing" | "ready" | "failed"; submission.evaluation once the organizer ran it
 ```
 
-`openExhibitDocument` is an [Open Exhibit](https://github.com/open-exhibit/spec) document: title, class, frames and sheets, with an `image.uri` per sheet.
+`openExhibitDocument` is an [Open Exhibit](https://github.com/open-exhibit/spec) document (an open, application-neutral format): title, class, frames and sheets, with an `image.uri` per sheet. Validate it against the [JSON Schema](https://github.com/open-exhibit/spec/blob/main/schema/exhibit.schema.json) before sending; see the [examples](https://github.com/open-exhibit/spec/tree/main/examples).
 
 A site that manages applications itself can also decide them: `applications.accept(id)` and `applications.reject(id)`.
 
