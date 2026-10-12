@@ -1,0 +1,67 @@
+{
+  "name": "@stamp-show/sdk",
+  "version": "0.1.0",
+  "description": "Node.js client for the Stamp.Show API: applications, exhibits, the expo's public content and webhook verification.",
+  "keywords": [
+    "stamp.show",
+    "philately",
+    "philatelic",
+    "exhibition",
+    "api",
+    "sdk",
+    "webhooks"
+  ],
+  "homepage": "https://stamp.show/developers/",
+  "repository": { "type": "git", "url": "git+https://github.com/stamp-show/node.git" },
+  "bugs": "https://github.com/stamp-show/node/issues",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./webhooks": {
+      "import": {
+        "types": "./dist/webhooks.d.ts",
+        "default": "./dist/webhooks.js"
+      },
+      "require": {
+        "types": "./dist/webhooks.d.cts",
+        "default": "./dist/webhooks.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "openapi-typescript": "^7.13.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.4"
+  }
+}
