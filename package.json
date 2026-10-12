@@ -1,6 +1,6 @@
 {
   "name": "@stamp-show/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js client for the Stamp.Show API: applications, exhibits, the expo's public content and webhook verification.",
   "keywords": [
     "stamp.show",
